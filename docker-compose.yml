@@ -1,6 +1,7 @@
 version: '2.1'
 services:
     web:
+        shm_size: '8gb'
         privileged: True
         devices:
             - "/dev/kfd:/dev/kfd"

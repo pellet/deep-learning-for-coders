@@ -5,8 +5,8 @@ RUN apt-get update -y
 
 COPY requirements.txt /tmp
 
-RUN python3.6 -m pip install --upgrade pip \
-    && python3.6 -m pip install --upgrade --force-reinstall -r /tmp/requirements.txt
+RUN python3 -m pip install --upgrade pip \
+    && python3 -m pip install --upgrade --force-reinstall -r /tmp/requirements.txt
 #    && python3.6 -m pip install --upgrade fastai fastcore nbdev jupyter python-dotenv
 #    && python3.6 -m pip install --upgrade nbdev \
 #    && python3.6 -m pip install --upgrade jupyter
