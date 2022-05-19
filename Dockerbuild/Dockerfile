@@ -1,17 +1,17 @@
 FROM rocm/pytorch:latest
-MAINTAINER Lucas Manchine <lucasperinm@gmail.com>
+LABEL Ben Pettit <ben.pettit@digimulti.com>
 
 RUN apt-get update -y
 
+COPY fastsetup/setup-conda.sh /tmp
+
+RUN /tmp/setup-conda.sh
+
 COPY requirements.txt /tmp
 
+RUN /root/mambaforge/bin/conda install -c fastchan fastai
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install --upgrade --force-reinstall -r /tmp/requirements.txt
-#    && python3.6 -m pip install --upgrade fastai fastcore nbdev jupyter python-dotenv
-#    && python3.6 -m pip install --upgrade nbdev \
-#    && python3.6 -m pip install --upgrade jupyter
-
-#RUN python3.6 -m pip install --upgrade python-dotenv
 
 WORKDIR /files
 
