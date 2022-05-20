@@ -1,9 +1,12 @@
+torch>=1.12.0.dev20220520
 fastai>=2.0.0
+fastbook
 graphviz
 ipywidgets
 matplotlib
 nbdev>=0.2.12
 pandas
-scikit_learn
+scikit-learn
 azure-cognitiveservices-search-imagesearch
 sentencepiece
+matplotlib
